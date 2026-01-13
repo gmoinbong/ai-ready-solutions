@@ -11,12 +11,15 @@ export interface Message {
   table?: TableData;
 }
 
-export enum GenerationStatus {
-  IDLE = "IDLE",
-  GENERATING = "GENERATING",
-  COMPLETED = "COMPLETED",
-  ERROR = "ERROR",
-}
+const GenerationStatusValues = {
+  IDLE: "IDLE",
+  GENERATING: "GENERATING",
+  COMPLETED: "COMPLETED",
+  ERROR: "ERROR",
+} as const;
+
+export const GenerationStatus = GenerationStatusValues;
+export type GenerationStatus = (typeof GenerationStatusValues)[keyof typeof GenerationStatusValues];
 
 export interface CSVGenerationConfig {
   apiKey: string;

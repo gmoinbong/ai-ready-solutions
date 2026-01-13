@@ -1,4 +1,4 @@
-import { TableData } from "../types";
+import type { TableData } from "../types";
 
 export const downloadAsCSV = (data: TableData) => {
   const csvContent = [

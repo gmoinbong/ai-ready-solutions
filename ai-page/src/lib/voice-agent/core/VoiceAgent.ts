@@ -1,9 +1,8 @@
 import { GoogleGenAI, Modality, LiveServerMessage } from "@google/genai";
-import {
+import { SessionStatus } from "../types";
+import type {
   VoiceAgentConfig,
   VoiceAgentCallbacks,
-  SessionStatus,
-  Message,
 } from "../types";
 import { createPcmBlob, decode, decodeAudioData } from "../utils/audioUtils";
 

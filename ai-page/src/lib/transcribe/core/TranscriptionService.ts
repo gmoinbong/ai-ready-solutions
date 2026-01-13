@@ -1,8 +1,8 @@
 import { GoogleGenAI } from "@google/genai";
-import {
+import { TranscriptionStatus } from "../types";
+import type {
   TranscriptionConfig,
   TranscriptionCallbacks,
-  TranscriptionStatus,
 } from "../types";
 
 export class TranscriptionService {

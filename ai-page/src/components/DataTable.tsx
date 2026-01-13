@@ -1,5 +1,6 @@
 import React from "react";
-import { TableData, downloadAsCSV } from "../lib/csv";
+import { downloadAsCSV } from "../lib/csv";
+import type { TableData } from "../lib/csv";
 
 interface DataTableProps {
   data: TableData;

@@ -1,8 +1,8 @@
 import { GoogleGenAI, Type } from "@google/genai";
-import {
+import { GenerationStatus } from "../types";
+import type {
   CSVGenerationConfig,
   CSVGenerationCallbacks,
-  GenerationStatus,
   TableData,
 } from "../types";
 

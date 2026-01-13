@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { VoiceAgent } from '../core/VoiceAgent';
-import { VoiceAgentConfig, VoiceAgentCallbacks, SessionStatus, Message } from '../types';
+import { SessionStatus } from '../types';
+import type { VoiceAgentConfig, VoiceAgentCallbacks, Message } from '../types';
 
 export interface UseVoiceAgentOptions extends VoiceAgentConfig {
   callbacks?: VoiceAgentCallbacks;

@@ -1,9 +1,9 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import { TranscriptionService } from "../core/TranscriptionService";
-import {
+import { TranscriptionStatus } from "../types";
+import type {
   TranscriptionConfig,
   TranscriptionCallbacks,
-  TranscriptionStatus,
 } from "../types";
 import { blobToBase64 } from "../utils/audioUtils";
 

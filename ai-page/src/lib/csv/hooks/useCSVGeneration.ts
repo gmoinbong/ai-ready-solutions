@@ -1,9 +1,9 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import { CSVGenerationService } from "../core/CSVGenerationService";
-import {
+import { GenerationStatus } from "../types";
+import type {
   CSVGenerationConfig,
   CSVGenerationCallbacks,
-  GenerationStatus,
   Message,
   TableData,
 } from "../types";
@@ -45,7 +45,7 @@ export function useCSVGeneration(
     setMessages((prev) => [...prev, assistantMessage]);
   }, []);
 
-  const handleError = useCallback((error: Error) => {
+  const handleError = useCallback(() => {
     const errorMessage: Message = {
       role: "assistant",
       content:

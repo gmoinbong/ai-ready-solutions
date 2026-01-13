@@ -4,12 +4,15 @@ export interface Message {
   timestamp: Date;
 }
 
-export enum SessionStatus {
-  IDLE = 'IDLE',
-  CONNECTING = 'CONNECTING',
-  ACTIVE = 'ACTIVE',
-  ERROR = 'ERROR'
-}
+const SessionStatusValues = {
+  IDLE: 'IDLE',
+  CONNECTING: 'CONNECTING',
+  ACTIVE: 'ACTIVE',
+  ERROR: 'ERROR'
+} as const;
+
+export const SessionStatus = SessionStatusValues;
+export type SessionStatus = (typeof SessionStatusValues)[keyof typeof SessionStatusValues];
 
 export interface VoiceAgentConfig {
   apiKey: string;

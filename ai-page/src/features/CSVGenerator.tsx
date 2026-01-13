@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useCSVGeneration, GenerationStatus } from "../lib/csv";
+import { useCSVGeneration } from "../lib/csv";
 import { DataTable } from "../components/DataTable";
 
 const CSVGenerator: React.FC = () => {
