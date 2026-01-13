@@ -7,6 +7,7 @@
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+      conditions: ['import', 'module', 'browser', 'default'],
       alias: {
         'vaul@1.1.2': 'vaul',
         'sonner@2.0.3': 'sonner',
@@ -46,21 +47,26 @@
         '@radix-ui/react-aspect-ratio@1.1.2': '@radix-ui/react-aspect-ratio',
         '@radix-ui/react-alert-dialog@1.1.6': '@radix-ui/react-alert-dialog',
         '@radix-ui/react-accordion@1.2.3': '@radix-ui/react-accordion',
-        'react': path.resolve(__dirname, './node_modules/react'),
-        'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
-        'react/jsx-runtime': path.resolve(__dirname, './node_modules/react/jsx-runtime'),
+        'react/jsx-runtime': path.resolve(__dirname, './node_modules/react/jsx-runtime.js'),
+        'react/jsx-dev-runtime': path.resolve(__dirname, './node_modules/react/jsx-dev-runtime.js'),
         '@': path.resolve(__dirname, './src'),
       },
       dedupe: ['react', 'react-dom', 'react/jsx-runtime'],
+      preserveSymlinks: false,
     },
     optimizeDeps: {
-      include: ['react', 'react-dom', 'react/jsx-runtime', 'react-router-dom'],
+      include: ['react', 'react-dom', 'react-router-dom'],
+      esbuildOptions: {
+        jsx: 'automatic',
+      },
     },
     build: {
       target: 'esnext',
       outDir: 'build',
-      commonjsOptions: {
-        include: [/ai-page/, /node_modules/],
+      rollupOptions: {
+        output: {
+          manualChunks: undefined,
+        },
       },
     },
     server: {
